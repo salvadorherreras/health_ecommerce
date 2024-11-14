@@ -1,0 +1,53 @@
+/* static/css/styles.css */
+
+/* Configuración del header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que el nav esté a la izquierda y el logo a la derecha */
+    background: #3a6351;
+    padding: 1rem;
+}
+
+/* Configuración del menú de navegación a la izquierda */
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Configuración del logo a la derecha */
+.logo-container {
+    margin-left: auto; /* Empuja el logo hacia la derecha */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 80px; /* Ajusta el tamaño según sea necesario */
+    vertical-align: middle;
+}
+
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}

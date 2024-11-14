@@ -1,0 +1,46 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Health & Wellness E-commerce{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="/supplements">Suplementos y Salud</a>
+                    <a href="/foods">Alimentos Saludables</a>
+                    <a href="/books">Libros de Salud</a>
+                </div>
+            </div>
+            <a href="/about">Sobre Nosotros</a>
+            <a href="/contact">Contacto</a>
+        </nav>
+        <div class="logo-container">
+            <a href="/">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Health & Wellness Logo" class="logo">
+            </a>
+        </div>
+
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Health & Wellness. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
