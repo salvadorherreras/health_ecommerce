@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Sobre Nosotros | Health & Wellness{% endblock %}
+
+{% block content %}
+<section class="about-us">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>Health & Wellness</strong>, creemos que la salud es el pilar fundamental para una vida plena y feliz. Nuestro compromiso es ofrecer productos de calidad que no solo cuiden de tu cuerpo, sino que también te inspiren a llevar un estilo de vida más saludable.</p>
+
+    <div class="about-grid">
+        <div class="about-item">
+            <img src="{{ url_for('static', filename='images/mission.jpg') }}" alt="Nuestra Misión">
+            <h3>Nuestra Misión</h3>
+            <p>Promover el bienestar integral mediante suplementos, alimentos y recursos educativos que potencien la salud desde la raíz. Trabajamos para ofrecer soluciones naturales, accesibles y de confianza para nuestros clientes.</p>
+        </div>
+
+        <div class="about-item">
+            <img src="{{ url_for('static', filename='images/story.jpg') }}" alt="Nuestra Historia">
+            <h3>Nuestra Historia</h3>
+            <p>Nacimos de la pasión por mejorar vidas a través de la salud. Inspirados por investigaciones científicas y experiencias personales, nuestro objetivo es convertirnos en el aliado de confianza para quienes buscan un bienestar integral.</p>
+        </div>
+
+        <div class="about-item">
+            <img src="{{ url_for('static', filename='images/values.jpg') }}" alt="Nuestros Valores">
+            <h3>Nuestros Valores</h3>
+            <p>Calidad, transparencia y sostenibilidad son los principios que guían todo lo que hacemos. Nos esforzamos por trabajar con proveedores responsables y ofrecer productos que respeten tanto al cliente como al medio ambiente.</p>
+        </div>
+    </div>
+<br>
+<br>
+    <h3>¿Por Qué Elegirnos?</h3>
+    <p>En Health & Wellness, no solo ofrecemos productos; ofrecemos un camino hacia una vida mejor. Cada artículo de nuestra tienda ha sido seleccionado cuidadosamente para garantizar que recibas lo mejor. Estamos aquí para acompañarte en cada paso de tu viaje hacia la salud.</p>
+</section>
+{% endblock %}

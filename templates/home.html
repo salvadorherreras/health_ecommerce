@@ -4,13 +4,16 @@
 
 {% block content %}
 <section class="hero">
+    <!-- Carrusel de Bootstrap -->
     <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicadores -->
         <ol class="carousel-indicators">
             <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#mainCarousel" data-slide-to="1"></li>
             <li data-target="#mainCarousel" data-slide-to="2"></li>
         </ol>
 
+        <!-- Imágenes del Carrusel -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ url_for('static', filename='images/slide1.jpg') }}" class="d-block w-100" alt="Bienestar">
@@ -35,6 +38,7 @@
             </div>
         </div>
 
+        <!-- Controles del Carrusel -->
         <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
@@ -44,5 +48,35 @@
             <span class="sr-only">Siguiente</span>
         </a>
     </div>
+</section>
+
+<!-- Sección de Bienestar Integral -->
+<section class="content-section">
+    <h2>Bienestar Integral para una Vida Saludable</h2>
+    <p>Tu bienestar es nuestra prioridad: productos naturales y ciencia para fortalecer tu salud.</p>
+    <p>
+        En nuestra tienda, creemos que una vida saludable empieza desde adentro. Nuestros productos están cuidadosamente seleccionados para brindar a tu cuerpo los nutrientes esenciales que necesita...
+    </p>
+    <a href="/products" class="cta-button">Explora nuestros productos</a>
+</section>
+
+<!-- Sección de Fortalecimiento del Sistema Inmune -->
+<section class="content-section">
+    <h2>Fortalece tu Sistema Inmune y Vive Mejor</h2>
+    <p>La mejor defensa es un sistema inmune fuerte: cuida de ti y de los que amas.</p>
+    <p>
+        Protegerse de enfermedades no debería ser complicado. En lugar de buscar soluciones rápidas, nuestro enfoque se centra en productos que nutren tu cuerpo desde la raíz...
+    </p>
+    <a href="/products" class="cta-button">Empieza a fortalecer tu salud</a>
+</section>
+
+<!-- Sección de Prevención de Enfermedades -->
+<section class="content-section">
+    <h2>La Prevención es Salud, y la Salud es Poder</h2>
+    <p>Invertir en tu salud hoy es el mejor regalo para tu futuro.</p>
+    <p>
+        La prevención es la clave para una vida larga y plena. Inspirados en los principios de salud holística de Frank Suárez y el Dr. Ludwig Johnson, te ofrecemos una selección de productos y recursos...
+    </p>
+    <a href="/products" class="cta-button">Descubre cómo prevenir problemas de salud</a>
 </section>
 {% endblock %}

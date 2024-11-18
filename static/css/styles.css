@@ -22,10 +22,15 @@
 }
 
 /* Configuración del logo a la derecha */
+/*.logo-container {
+/*    margin-left: auto; /* Empuja el logo hacia la derecha */
+/*    display: flex;
+/*    align-items: left;
+/*}
+
+/* Logo a la izquierda */
 .logo-container {
-    margin-left: auto; /* Empuja el logo hacia la derecha */
-    display: flex;
-    align-items: center;
+    flex: 0 1 auto; /* Mantiene el logo en su posición original a la izquierda */
 }
 
 .logo {
@@ -34,10 +39,72 @@
 }
 
 
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Estilo para los enlaces del menú */
 .navbar a {
     color: #ffffff;
     text-decoration: none;
-    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #31b480;
+}
+
+/* Estilo para el menú desplegable */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.dropbtn:hover {
+    color: #abff6b;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #31b480;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .category-list {
@@ -50,4 +117,291 @@
 .carousel-item img {
     height: 500px;
     object-fit: cover;
+}
+
+.hero {
+    margin-bottom: 2rem;
+}
+
+.content-section {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: #3a6351;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #31b480;
+    color: hsl(355, 61%, 74%);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #31b480;
+}
+
+/* Contenedor del formulario de contacto */
+.contact-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: #3a6351;
+    margin-bottom: 1rem;
+}
+
+.contact-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Estilos del formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #3a6351;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3a6351;
+    box-shadow: 0 0 5px rgba(58, 99, 81, 0.3);
+}
+
+/* Botón de envío */
+.submit-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #31b480;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #31b480;
+}
+
+/* Estilo para las secciones de productos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.product-item {
+    width: 300px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    color: #3a6351;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón general */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff4a4a;
+}
+
+/* Tabla del carrito */
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.cart table th,
+.cart table td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.cart table th {
+    background-color: #3a6351;
+    color: #ffffff;
+}
+
+.clear-cart {
+    margin-top: 1rem;
+    background-color: #333;
+}
+
+.clear-cart:hover {
+    background-color: #555;
+}
+
+/* static/css/styles.css */
+
+/* Contenedor general de la sección "Sobre Nosotros" */
+.about-us {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+.about-us h2 {
+    color: #3a6351;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Diseño en cuadrícula para las secciones internas */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.about-item {
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.about-item h3 {
+    color: #3a6351;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-link {
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.checkout-link {
+    font-weight: bold;
+    color: #ff6b6b;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: none;
+}
+
+.checkout-link:hover {
+    background-color: #ff6b6b;
+    color: #ffffff;
 }

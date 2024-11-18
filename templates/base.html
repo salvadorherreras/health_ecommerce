@@ -11,26 +11,25 @@
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
-            <a href="/">Inicio</a>
-            <div class="dropdown">
-                <button class="dropbtn">Productos</button>
-                <div class="dropdown-content">
-                    <a href="/supplements">Suplementos y Salud</a>
-                    <a href="/foods">Alimentos Saludables</a>
-                    <a href="/books">Libros de Salud</a>
-                </div>
-            </div>
-            <a href="/about">Sobre Nosotros</a>
-            <a href="/contact">Contacto</a>
-        </nav>
         <div class="logo-container">
             <a href="/">
                 <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Health & Wellness Logo" class="logo">
             </a>
         </div>
-
+        <nav class="navbar">
+            <a href="/">Inicio</a>
+            <a href="/products">Productos</a>
+            <a href="/about">Sobre Nosotros</a>
+            <a href="/contact">Contacto</a>
+            <div class="cart-container">
+                <a href="/cart" class="cart-link">
+                    🛒 Carrito (<span id="cart-count">0</span>)
+                </a>
+                <a href="/cart" id="checkout-link" class="checkout-link" style="display: none;">Ir a Pagar</a>
+            </div>
+        </nav>
     </header>
+    
     <main>
         {% block content %}{% endblock %}
     </main>
@@ -42,5 +41,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/cart.js') }}"></script>
 </body>
 </html>

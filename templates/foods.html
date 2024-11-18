@@ -1,7 +1,30 @@
-<!-- templates/supplements.html -->
 {% extends 'base.html' %}
-{% block title %}Suplementos y Productos de Salud{% endblock %}
+
+{% block title %}Alimentos Saludables{% endblock %}
+
 {% block content %}
-<h2>Suplementos y Productos de Salud</h2>
-<p>Contenido próximamente...</p>
+<section class="foods">
+    <h2>Alimentos Saludables para una Vida Plena</h2>
+    <p>Descubre alimentos funcionales que aportan beneficios increíbles a tu cuerpo.</p>
+
+    <div class="product-grid">
+        <div class="product-item">
+            <img src="{{ url_for('static', filename='images/aceite_de_coco.jpg') }}" alt="Aceite de Coco">
+            <h3>Aceite de Coco</h3>
+            <p>Un alimento versátil para cocinar o usar como suplemento.</p>
+            <p><strong>Beneficios:</strong> Antioxidante, grasas saludables</p>
+            <p><strong>Precio:</strong> $10.00</p>
+            <a href="#" class="btn add-to-cart" data-product-id="aceite_de_coco">Añadir al Carrito</a>
+        </div>
+        <div class="product-item">
+            <img src="{{ url_for('static', filename='images/flores_de_jamaica.jpg') }}" alt="Flores de Jamaica">
+            <h3>Flores de Jamaica</h3>
+            <p>Ricas en antioxidantes, ideales para tés e infusiones.</p>
+            <p><strong>Beneficios:</strong> Reduce la inflamación, mejora la digestión</p>
+            <p><strong>Precio:</strong> $15.00</p>
+            <a href="#" class="btn add-to-cart" data-product-id="flores_de_jamaica">Añadir al Carrito</a>
+        </div>
+        <!-- Agrega más productos según sea necesario -->
+    </div>
+</section>
 {% endblock %}
