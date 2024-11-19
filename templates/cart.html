@@ -3,38 +3,54 @@
 {% block title %}Carrito de Compras{% endblock %}
 
 {% block content %}
+
 <section class="cart">
     <h2>Tu Carrito</h2>
     {% if cart_items %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product_id, quantity in cart_items.items() %}
+        <form id="cart-form">
+            <table>
+                <thead>
                     <tr>
-                        <td>{{ products[product_id]['name'] }}</td>
-                        <td>{{ quantity }}</td>
-                        <td>${{ products[product_id]['price'] }}</td>
-                        <td>${{ products[product_id]['price'] * quantity }}</td>
+                        <th>Seleccionar</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <h3>Total: ${{ total }}</h3>
-        
+                </thead>
+                <tbody>
+                    {% for product_id, quantity in cart_items.items() %}
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="select-item" value="{{ product_id }}">
+                            </td>
+                            <td>{{ products[product_id]['name'] }}</td>
+                            <td>
+                                <button class="btn-quantity decrement" data-product-id="{{ product_id }}">-</button>
+                                <span>{{ quantity }}</span>
+                                <button class="btn-quantity increment" data-product-id="{{ product_id }}">+</button>
+                            </td>
+                            <td>${{ products[product_id]['price'] }}</td>
+                            <td>${{ products[product_id]['price'] * quantity }}</td>
+                            <td>
+                                <button type="button" class="btn-remove" data-product-id="{{ product_id }}">Eliminar</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h3>Total: ${{ total }}</h3>
+            <button type="button" id="remove-selected" class="btn-primary">Eliminar Seleccionados</button>
+        </form>
+
         <form id="payment-form">
             <button type="button" id="pay-button" class="btn-primary">Pagar con MercadoPago</button>
         </form>
         
         <script src="https://sdk.mercadopago.com/js/v2"></script>
         <script>
-            const mp = new MercadoPago('TU_CLAVE_PUBLICA', {
+            const mp = new MercadoPago('TEST-c8665529-07ae-4cc9-a187-9600eb4ed5f4', {
                 locale: 'es-CL'
             });
         
@@ -48,12 +64,10 @@
             });
         </script>
 
-        <a href="{{ url_for('clear_cart') }}" class="btn clear-cart">Vaciar Carrito</a>
     {% else %}
         <p>Tu carrito está vacío.</p>
     {% endif %}
 </section>
-
 
 
 {% endblock %}

@@ -405,3 +405,44 @@
     background-color: #ff6b6b;
     color: #ffffff;
 }
+
+
+/* Botón de eliminar */
+.btn-remove {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    background-color: #e03e3e;
+}
+
+/* Botón de eliminar seleccionados */
+#remove-selected {
+    margin-top: 1rem;
+    background-color: #d9534f;
+    color: white;
+}
+
+#remove-selected:hover {
+    background-color: #c9302c;
+}
+
+.btn-quantity {
+    background-color: #3a6351;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn-quantity:hover {
+    background-color: #2e4d3c;
+}
