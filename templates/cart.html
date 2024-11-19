@@ -27,9 +27,33 @@
             </tbody>
         </table>
         <h3>Total: ${{ total }}</h3>
+        
+        <form id="payment-form">
+            <button type="button" id="pay-button" class="btn-primary">Pagar con MercadoPago</button>
+        </form>
+        
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <script>
+            const mp = new MercadoPago('TU_CLAVE_PUBLICA', {
+                locale: 'es-CL'
+            });
+        
+            document.getElementById('pay-button').addEventListener('click', function () {
+                fetch('/create-payment', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        window.location.href = data.init_point; // Redirige al formulario de pago
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        </script>
+
         <a href="{{ url_for('clear_cart') }}" class="btn clear-cart">Vaciar Carrito</a>
     {% else %}
         <p>Tu carrito está vacío.</p>
     {% endif %}
 </section>
+
+
+
 {% endblock %}

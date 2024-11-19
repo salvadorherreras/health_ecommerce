@@ -2,6 +2,10 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mail import Mail, Message
 from flask import jsonify
+import mercadopago
+
+# Configurar las credenciales de MercadoPago
+sdk = mercadopago.SDK("TEST-2777059790432441-111802-608eacf1e3130d411b343321d1a36107-34660496")
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Necesario para usar la sesión
@@ -98,6 +102,31 @@ def add_to_cart(product_id):
 def clear_cart():
     session.pop('cart', None)
     return redirect(url_for('cart'))
+
+@app.route('/create-payment', methods=['POST'])
+def create_payment():
+    # Datos del pago
+    preference_data = {
+        "items": [
+            {
+                "title": "Compra en Health & Wellness",
+                "quantity": 1,
+                "unit_price": float(session.get('total', 0))  # Total del carrito
+            }
+        ],
+        "back_urls": {
+            "success": "http://127.0.0.1:5000/success",
+            "failure": "http://127.0.0.1:5000/failure",
+            "pending": "http://127.0.0.1:5000/pending"
+        },
+        "auto_return": "approved",
+    }
+
+    # Crear preferencia
+    preference_response = sdk.preference().create(preference_data)
+    preference = preference_response["response"]
+
+    return jsonify({"init_point": preference["init_point"]})
 
 if __name__ == '__main__':
     print(app.url_map)  # Esto imprimirá todas las rutas registradas
